@@ -6,7 +6,7 @@
 
     <groupId>com.github.rspace-os</groupId>
     <artifactId>rspace-os-parent</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.1.0</version>
     <packaging>pom</packaging>
 
     <name>RSpace-OS parent pom</name>
@@ -50,6 +50,24 @@
                             <configuration>
                                 <failOnError>false</failOnError>
                                 <doclint>none</doclint>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>3.4.1</version>
+                    <executions>
+                        <execution>
+                            <id>enforce-dependency-convergence</id>
+                            <goals>
+                                <goal>enforce</goal>
+                            </goals>
+                            <configuration>
+                                <rules>
+                                    <dependencyConvergence/>
+                                </rules>
                             </configuration>
                         </execution>
                     </executions>
